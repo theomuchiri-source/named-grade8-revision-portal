@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CBC Logo Generator</title>
+</head>
+<body style="background: #0f172a; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <canvas id="iconCanvas" width="192" height="192" style="border-radius: 36px; box-shadow: 0 15px 35px rgba(0,0,0,0.6);"></canvas>
+
+    <script>
+        const canvas = document.getElementById('iconCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Background Gradient
+        const gradient = ctx.createLinearGradient(0, 0, 192, 192);
+        gradient.addColorStop(0, '#1e293b');
+        gradient.addColorStop(1, '#0f172a');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 192, 192);
+
+        // Outer Accent Border
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 6;
+        ctx.strokeRect(14, 14, 164, 164);
+
+        // Draw a minimalist book/shield emblem shape
+        ctx.fillStyle = '#38bdf8';
+        ctx.beginPath();
+        ctx.moveTo(96, 40);
+        ctx.lineTo(135, 60);
+        ctx.lineTo(135, 95);
+        ctx.quadraticCurveTo(135, 125, 96, 145);
+        ctx.quadraticCurveTo(57, 125, 57, 95);
+        ctx.lineTo(57, 60);
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.15)';
+        ctx.fill();
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 4;
+        ctx.stroke();
+
+        // Bold Main Text
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 42px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('CBC', 96, 88);
+
+        // Subtitle text
+        ctx.fillStyle = '#38bdf8';
+        ctx.font = 'bold 16px sans-serif';
+        ctx.fillText('GRADE 8', 96, 124);
+
+        // Auto download the image as icon.png
+        setTimeout(() => {
+            const link = document.createElement('a');
+            link.download = 'icon.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }, 500);
+    </script>
+</body>
+</html>

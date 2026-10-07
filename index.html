@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNEC Revision Portal - CBC Junior School Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Official Top Status Bar -->
+    <div class="knec-top-bar">
+        <span id="live-date">Sunday, October 4, 2026</span>
+        <span id="user-status-display">Candidate Status: Guest Session</span>
+    </div>
+
+    <!-- Official Header -->
+    <header class="knec-header">
+        <div class="emblem-container">
+            <span class="emblem-badge">🇰🇪</span>
+        </div>
+        <h2>THE KENYA NATIONAL EXAMINATIONS COUNCIL</h2>
+        <h1>CBC JUNIOR SCHOOL REVISION PORTAL</h1>
+        <p class="subtitle-tag">Official Competency-Based Curriculum Assessment & Mock Exam Hub</p>
+    </header>
+    <div class="green-divider"></div>
+
+    <div class="app-container">
+
+        <!-- Auth Section (Shown when logged out) -->
+        <div id="auth-section" class="portal-card glass-card">
+            <div class="auth-icon">🎓</div>
+            <h3>Candidate Portal Login</h3>
+            <p class="instruction-text">Secure access for Grade 8 National Assessment Preparation.</p>
+            
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="e.g. student@knec.ac.ke" class="knec-input">
+            </div>
+            
+            <div class="input-group">
+                <label>Portal Password</label>
+                <input type="password" id="password" placeholder="Enter your secure password" class="knec-input">
+            </div>
+
+            <div class="btn-group">
+                <button id="login-btn" class="knec-btn primary">Secure Login</button>
+                <button id="signup-btn" class="knec-btn secondary">Register Account</button>
+            </div>
+            <p id="auth-status" class="status-text"></p>
+        </div>
+
+        <!-- Content Section (Shown when logged in) -->
+        <div id="content-section" style="display: none;">
+            
+            <!-- Gamified User Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="welcome-text">
+                    <h2>Welcome to the Assessment Hub</h2>
+                    <p>Select an official module below to start practicing past exams and topical questions.</p>
+                </div>
+                <div class="badge-counter">
+                    <span class="star-icon">⭐</span>
+                    <span id="completed-quizzes-count">Active Student</span>
+                </div>
+            </div>
+
+            <!-- Side-by-Side Official Portal Grid -->
+            <div class="portal-grid">
+                
+                <!-- Primary & Junior Box -->
+                <div class="portal-box blue-box">
+                    <div class="box-icon">📚</div>
+                    <div>
+                        <h3>PRIMARY & JUNIOR SCHOOLS</h3>
+                        <p>Interactive Grade 8 Subject Revision & Topical Quiz Modules</p>
+                    </div>
+                    <button class="portal-sub-btn" onclick="switchPortalTab('subjects')">Open Subject Hub</button>
+                </div>
+
+                <!-- Center Status Box -->
+                <div class="portal-box center-info-box">
+                    <div class="exam-room-preview">
+                        <div class="pulse-dot"></div>
+                        <strong>Live KNEC Server Connected</strong>
+                        <p>All questions and past papers sync directly with Supabase secure database.</p>
+                    </div>
+                </div>
+
+                <!-- National Assessments / KNEC Papers Box -->
+                <div class="portal-box blue-box">
+                    <div class="box-icon">📄</div>
+                    <div>
+                        <h3>NATIONAL ASSESSMENTS</h3>
+                        <p>Official Past Exam Papers & Mock Assessment Practice</p>
+                    </div>
+                    <div class="dual-btn-stack">
+                        <button class="portal-sub-btn cyan" onclick="switchPortalTab('papers')">View KNEC Papers</button>
+                        <button class="portal-sub-btn yellow" onclick="switchPortalTab('tests')">Qualifying Tests</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Dynamic Interactive Workspace -->
+            <div id="portal-workspace" class="workspace-card">
+                <div id="subjects-container" class="workspace-section"></div>
+                <div id="papers-container" class="workspace-section" style="display: none;"></div>
+                <div id="topics-list" class="workspace-section"></div>
+                <div id="quiz-container" class="workspace-section"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Supabase CDN & App Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(err => console.log('SW failed:', err));
+        }
+
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('live-date').textContent = new Date().toLocaleDateString('en-US', options);
+    </script>
+</body>
+</html>

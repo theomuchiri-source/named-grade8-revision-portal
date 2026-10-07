@@ -1,0 +1,436 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    background-color: #f1f5f9;
+    margin: 0;
+    padding: 0;
+    color: #1e293b;
+}
+
+.knec-top-bar {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.knec-header {
+    background: #ffffff;
+    text-align: center;
+    padding: 25px 15px 15px 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.emblem-container {
+    margin-bottom: 5px;
+}
+
+.emblem-badge {
+    font-size: 40px;
+}
+
+.knec-header h2 {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.knec-header h1 {
+    font-size: 24px;
+    color: #0f172a;
+    margin: 6px 0 4px 0;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.subtitle-tag {
+    font-size: 13px;
+    color: #0284c7;
+    margin: 0;
+    font-weight: 600;
+}
+
+.green-divider {
+    height: 4px;
+    background: linear-gradient(90deg, #16a34a, #22c55e);
+    width: 100%;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.portal-card {
+    background: #ffffff;
+    max-width: 440px;
+    margin: 40px auto;
+    padding: 35px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+}
+
+.auth-icon {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.portal-card h3 {
+    color: #0f172a;
+    margin-top: 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.instruction-text {
+    font-size: 13px;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 6px;
+}
+
+.knec-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s;
+    background-color: #f8fafc;
+}
+
+.knec-input:focus {
+    outline: none;
+    border-color: #0284c7;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.knec-btn {
+    flex: 1;
+    padding: 12px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+.knec-btn:active {
+    transform: scale(0.98);
+}
+
+.knec-btn.primary {
+    background-color: #0f172a;
+    color: white;
+}
+
+.knec-btn.primary:hover {
+    background-color: #1e293b;
+}
+
+.knec-btn.secondary {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+.knec-btn.secondary:hover {
+    background-color: #cbd5e1;
+}
+
+.status-text {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 15px;
+    color: #0284c7;
+    font-weight: 600;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: white;
+    padding: 25px 30px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+}
+
+.welcome-text h2 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+}
+
+.welcome-text p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.badge-counter {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Portal Grid Layout */
+.portal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 900px) {
+    .portal-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.portal-box {
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.portal-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+}
+
+.portal-box.blue-box {
+    background-color: #0f172a;
+    color: white;
+}
+
+.box-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.portal-box.blue-box h3 {
+    color: white;
+    font-size: 15px;
+    margin: 0 0 6px 0;
+    font-weight: 700;
+}
+
+.portal-box.blue-box p {
+    font-size: 12px;
+    color: #94a3b8;
+    margin: 0 0 20px 0;
+    line-height: 1.4;
+}
+
+.portal-sub-btn {
+    width: 100%;
+    padding: 11px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    background-color: #ffffff;
+    color: #0f172a;
+    border-radius: 8px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.portal-sub-btn:hover {
+    background-color: #f8fafc;
+}
+
+.dual-btn-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.portal-sub-btn.cyan {
+    background-color: #0ea5e9;
+    color: white;
+}
+.portal-sub-btn.cyan:hover {
+    background-color: #0284c7;
+}
+
+.portal-sub-btn.yellow {
+    background-color: #eab308;
+    color: #0f172a;
+}
+.portal-sub-btn.yellow:hover {
+    background-color: #ca8a04;
+}
+
+.center-info-box {
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.exam-room-preview {
+    color: #475569;
+    font-size: 13px;
+}
+
+.pulse-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    margin: 0 auto 8px auto;
+    box-shadow: 0 0 0 rgba(34, 197, 94, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+/* Workspace styling */
+.workspace-card {
+    background: white;
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    min-height: 350px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+}
+
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.subject-card, .topic-card, .paper-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid #0f172a;
+    padding: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    color: #1e293b;
+}
+
+.subject-card:hover, .topic-card:hover, .paper-card:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    border-left-color: #0284c7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.back-btn {
+    background-color: #64748b;
+    color: white;
+    border: none;
+    padding: 9px 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: background 0.2s;
+}
+
+.back-btn:hover {
+    background-color: #475569;
+}
+
+.question-block {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 22px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.question-block label {
+    display: block;
+    margin: 8px 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.question-block label:hover {
+    background: #e2e8f0;
+}
+
+.submit-quiz-btn {
+    background-color: #16a34a;
+    color: white;
+    width: 100%;
+    padding: 14px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background 0.2s;
+}
+
+.submit-quiz-btn:hover {
+    background-color: #15803d;
+}
+
+.loading {
+    color: #64748b;
+    font-style: italic;
+    padding: 20px 0;
+    text-align: center;
+}
